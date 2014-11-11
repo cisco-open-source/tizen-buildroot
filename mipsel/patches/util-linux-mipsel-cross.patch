@@ -1,0 +1,30 @@
+diff --git a/configure b/configure
+index 2cd3e20..3756bcd 100755
+--- a/configure
++++ b/configure
+@@ -16997,9 +16997,7 @@ else
+ 
+      #ifdef __GLIBC__
+ 
+-     #if !(__GLIBC_PREREQ(2, 7))
+-     #error %m is not available
+-     #endif
++
+ 
+      #elif defined(_POSIX_VERSION)
+ 
+diff --git a/configure.ac b/configure.ac
+index 53c0de2..1225897 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -435,9 +435,7 @@ AC_CACHE_VAL([scanf_cv_alloc_modifier],
+ 
+      #ifdef __GLIBC__
+ 
+-     #if !(__GLIBC_PREREQ(2, 7))
+-     #error %m is not available
+-     #endif
++  
+ 
+      #elif defined(_POSIX_VERSION)
+ 

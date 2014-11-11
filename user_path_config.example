@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export BUILD_ROOT_LOCATION=/path/to/buildroot
+export TIZEN_DIR=/path/to/tizen/src
+
+export MIPS_PATH=/path/to/mipsel/toolchains
+export ARM_PATH=/path/to/arm/toolchains

@@ -1,0 +1,22 @@
+diff --git a/scripts/find-lang.sh b/scripts/find-lang.sh
+index 413fb35..c618d19 100755
+--- a/scripts/find-lang.sh
++++ b/scripts/find-lang.sh
+@@ -123,7 +123,7 @@ rm -f $MO_NAME_NEW
+ 
+ # remove languages we do not yet support - but give out statistics
+ find "$TOP_DIR/usr/share/locale/" -maxdepth 1 -type d | sed 's:'"$TOP_DIR"/usr/share/locale/'::; /^$/d' | while read dir; do
+-  if ! rpm -ql filesystem | egrep -q "/usr/share/locale/$dir"$; then
++  if ! find /usr/share | egrep -q "/usr/share/locale/$dir"$; then
+     find $TOP_DIR/usr/share/locale/$dir -name *.mo | sed 's:'"$TOP_DIR"'::' | while read file; do
+       echo -n "removing translation $file: "
+       msgunfmt "$TOP_DIR/$file" | msgfmt --statistics -o /dev/null -
+@@ -132,7 +132,7 @@ find "$TOP_DIR/usr/share/locale/" -maxdepth 1 -type d | sed 's:'"$TOP_DIR"/usr/s
+   fi
+ done
+ find $TOP_DIR/usr/share/help/ -maxdepth 1 -type d | sed 's:'"$TOP_DIR"/usr/share/help/'::; /^$/d' | while read dir; do
+-  if ! rpm -ql filesystem | egrep -q "/usr/share/help/$dir"$; then
++  if ! find /usr/share | egrep -q "/usr/share/help/$dir"$; then
+     echo "removing help translation /usr/share/help/$dir"
+     rm -rf $TOP_DIR/usr/share/help/$dir
+   fi
