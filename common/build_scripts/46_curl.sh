@@ -2,6 +2,8 @@
 
 source ../utils.sh
 PACKAGE_NAME=curl
+export NEED_AUTORECONF=1
+
 cross_configure_make $PACKAGE_NAME " --host=$HOST --without-nss \
         --without-gnutls \
         --disable-ipv6 \

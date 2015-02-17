@@ -52,7 +52,6 @@ lzop
 m4
 make
 mpfr
-nasm
 ncurses
 net-tools
 nspr
